@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+output/
+assets/
+.vscode/
+.idea/
+download/
+.iqagent_index/
+.iqagent_backups/
+_tree_output/
+.iqagent_graphify_signal.json

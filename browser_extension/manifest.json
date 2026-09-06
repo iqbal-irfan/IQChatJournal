@@ -1,0 +1,72 @@
+{
+  "manifest_version": 3,
+  "name": "IQChatJournal Browser Capture",
+  "version": "0.1.0",
+  "description": "Browser extension for capturing AI chat conversations.",
+  "permissions": [
+    "storage",
+    "downloads",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*",
+    "https://chat.deepseek.com/*",
+    "https://www.deepseek.com/*",
+    "https://gemini.google.com/*",
+    "https://claude.ai/*",
+    "https://www.kimi.com/*",
+    "https://www.kimi.ai/*",
+    "https://kimi.moonshot.cn/*",
+    "https://chat.qwen.ai/*",
+    "https://qwen.ai/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://chat.deepseek.com/*",
+        "https://www.deepseek.com/*",
+        "https://gemini.google.com/*",
+        "https://claude.ai/*",
+        "https://www.kimi.com/*",
+        "https://www.kimi.ai/*",
+        "https://kimi.moonshot.cn/*",
+        "https://chat.qwen.ai/*",
+        "https://qwen.ai/*"
+      ],
+      "js": [
+        "page_hook.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://chat.deepseek.com/*",
+        "https://www.deepseek.com/*",
+        "https://gemini.google.com/*",
+        "https://claude.ai/*",
+        "https://www.kimi.com/*",
+        "https://www.kimi.ai/*",
+        "https://kimi.moonshot.cn/*",
+        "https://chat.qwen.ai/*",
+        "https://qwen.ai/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_title": "IQChatJournal",
+    "default_popup": "popup.html"
+  }
+}
